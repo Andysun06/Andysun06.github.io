@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Learning-Notes, Andysun06">
+    <meta name="keywords" content="CF110B-题解, Andysun06">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Learning-Notes | Andysun06</title>
+    <title>CF110B-题解 | Andysun06</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Learning-Notes</h1>
+                    <h1 class="description center-align post-title">CF110B-题解</h1>
                 </div>
             </div>
         </div>
@@ -441,12 +441,41 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                <span class="chip bg-color">题解</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                <span class="chip bg-color">洛谷</span>
+                            </a>
+                        
+                            <a href="/tags/Codeforces/">
+                                <span class="chip bg-color">Codeforces</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                题解版
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -455,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-28
+                    2020-05-02
                 </div>
                 
 
@@ -464,7 +493,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    374
                 </div>
                 
 
@@ -476,7 +505,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="CF110B-题解"><a href="#CF110B-题解" class="headerlink" title="CF110B 题解"></a>CF110B 题解</h2><p>这题居然没有 Pascal 的题解，那我就写一篇吧。</p>
+<h3 id="题目翻译-amp-做法分析："><a href="#题目翻译-amp-做法分析：" class="headerlink" title="题目翻译&amp;做法分析："></a>题目翻译&amp;做法分析：</h3><p>给定一个数 $n$ 让你输出满足这三个条件的字符串：</p>
+<ul>
+<li>整个字符串都由小写字母组成；</li>
+<li>两个相同字母之间的距离为 4 或 7。</li>
+<li>在满足以上条件的前提上，字符串尽量最小。</li>
+</ul>
+<p>然后我们就可以开始找规律，首先，字典序是最小的，那不就是 $a$,$b$,$c$,$d$…… 等等，按顺序来。</p>
+<p>接着，我们画出一个表格：</p>
+<p>先把字典序最小的 $a$ 填进去（注意：两个相同字母之间的距离为 4 或 7。） 为了字典序最小，所以肯定是字典序越小的字母越往前。</p>
+<table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">c</th>
+<th align="center">d</th>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">c</th>
+<th align="center">d</th>
+<th align="center">a</th>
+<th align="center">……</th>
+</tr>
+</thead>
+</table>
+<p>照上面这样子填下去，发现有一个循环节 <code>a</code>+<code>bcda</code>+<code>bcda</code>+<code>bcda</code>+…… 那我们就可以开始写程序了。</p>
+<h3 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h3><ul>
+<li><p>Pascal 代码：</p>
+<pre class=" language-pas"><code class="language-pas">var n,i:longint;
+begin
+  read(n); //输入
+  for i:=0 to n-1 do //循环 n 次
+      write(chr(97+i mod 4)); //刚刚找到的规律
+end.</code></pre>
+</li>
+<li><p>C++ 代码：</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
+<span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输入</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//循环 n 次</span>
+      <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token operator">+</span>i<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//刚刚找到的规律</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<p>提交结果显示，Pascal 的代码会比 C++ 慢 1~2 秒，但内存要更少。</p>
+<p>希望本题解对大家有帮助，也感谢管理员在百忙之中帮助我审核题解，谢谢！</p>
+
             </div>
             <hr/>
 
@@ -501,7 +579,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/Learning-Notes/index.html">http://yoursite.com/Learning-Notes/index.html</a>
+                    <a href="http://yoursite.com/2020/05/02/CF110B-%E9%A2%98%E8%A7%A3/">http://yoursite.com/2020/05/02/CF110B-%E9%A2%98%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,7 +616,27 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                    <span class="chip bg-color">题解</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                    <span class="chip bg-color">洛谷</span>
+                                </a>
+                            
+                                <a href="/tags/Codeforces/">
+                                    <span class="chip bg-color">Codeforces</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -731,34 +829,67 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/Learning-Notes/index.html">
+                <a href="/2020/05/02/CF110B-%E9%A2%98%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Learning-Notes">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="CF110B-题解">
                         
-                        <span class="card-title">Learning-Notes</span>
+                        <span class="card-title">CF110B-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            CF110B 题解这题居然没有 Pascal 的题解，那我就写一篇吧。
+题目翻译&amp;做法分析：给定一个数 $n$ 让你输出满足这三个条件的字符串：
+
+整个字符串都由小写字母组成；
+两个相同字母之间的距离为 4 或 7。
+在满足以上条件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Andysun06
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                    题解版
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                        <span class="chip bg-color">题解</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                        <span class="chip bg-color">洛谷</span>
+                    </a>
+                    
+                    <a href="/tags/Codeforces/">
+                        <span class="chip bg-color">Codeforces</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -766,37 +897,68 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Learning-Notes/index.html">
+                <a href="/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Learning-Notes">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="CF278A-题解">
                         
-                        <span class="card-title">Learning-Notes</span>
+                        <span class="card-title">CF278A-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            CF278A 题解这题既然没有pascal题解，那我就来一篇
+题目描述：有 $n$ 个车站排成一个环形，给定 $n$ 个车站之间的距离，求从第$s$个车站到第 $t$ 个车站所需的最短距离。
+题目分析：也就是说，有一个这样的车站：
+
+他可以
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Andysun06
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                    题解版
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                        <span class="chip bg-color">题解</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                        <span class="chip bg-color">洛谷</span>
+                    </a>
+                    
+                    <a href="/tags/Codeforces/">
+                        <span class="chip bg-color">Codeforces</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
