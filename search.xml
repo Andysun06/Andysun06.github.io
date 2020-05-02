@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>CF278A-题解</title>
+      <link href="/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/"/>
+      <url>/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="CF278A-题解"><a href="#CF278A-题解" class="headerlink" title="CF278A 题解"></a>CF278A 题解</h2><p>这题既然没有pascal题解，那我就来一篇</p><h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>有 $n$ 个车站排成一个<strong>环形</strong>，给定 $n$ 个车站之间的距离，求从第$s$个车站到第 $t$ 个车站所需的最短距离。</p><h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>也就是说，有一个这样的车站：</p><p><img src="https://i.loli.net/2020/05/01/i6pjY3a4hyAgNno.png" alt="1"></p><p>他可以这样走：</p><p><img src="https://i.loli.net/2020/05/01/C1y8PTSFVeHWnLE.png" alt="1"></p><p>也可以这样走：</p><p><img src="https://i.loli.net/2020/05/01/bC5XiJ6HIA8Bucs.png" alt="1"></p><p>现在告诉你：</p><ul><li>① 和 ② 的距离为 2</li><li>② 和 ③ 的距离为 3</li><li>③ 和 ④ 的距离为 1</li><li>④ 和 ① 的距离为 8</li></ul><p>也就是下面这种状况：</p><p><img src="https://i.loli.net/2020/05/01/GFHVh5N2ysExeR3.png" alt="1"></p><p>那有的人就想，我只要判断出那个路线距离短就可以了呀，那么请看下面：</p><p>你要从 ① 走到 ④，你会怎么走？</p><ul><li>是从 ① –&gt; ② –&gt; ③ –&gt; ④</li><li>还是 ① –&gt; ④</li></ul><p>很明显，当然是 ① –&gt; ② –&gt; ③ –&gt; ④ 要短一点，所以，路线短不一定距离短，好了，既然理解了题目和易错点，就要开始写程序了</p><h3 id="做法分析："><a href="#做法分析：" class="headerlink" title="做法分析："></a>做法分析：</h3><p>我们先用一个数组，把每个点之间的距离存下来，然后计算总路程</p><pre class=" language-pas"><code class="language-pas">read(n);   for i:=1 to n do   begin       read(f[i]);       sum:=sum+f[i];//计算总路程   end;</code></pre><p>然后输入 $s$ , $t$ 并且将小的放在前面</p><pre class=" language-pas"><code class="language-pas">if s>t then //如果s大于t，就将他们交换过来   begin        q:=s; //交换       s:=t;       t:=q;   end;</code></pre><p>再计算从 $s$ 到 $t$ 的路线距离，这时候可能有人问：不是要计算两条吗？</p><p>计算两条当然是可以的，但是我们之前已经计算了总长度，所以说，总长度 减去 $s$ 到 $t$ 的路线距离 就等于 另一条路线长度。</p><pre class=" language-pas"><code class="language-pas">for i:=s to t-1 do    k:=k+f[i];</code></pre><p>最后，只要一个判断输出，就可以了</p><pre class=" language-pas"><code class="language-pas">if k<(sum-k) then       writeln(k)   else       writeln(sum-k);</code></pre><p>下面是完整代码：</p><pre><code>var n,s,t,sum,k,i,q:longint;    f:array [1..102] of longint;Begin   read(n);   for i:=1 to n do   begin       read(f[i]);       sum:=sum+f[i];   end;   read(s,t);   if s&gt;t then   begin        q:=s;       s:=t;       t:=q;   end;   for i:=s to t-1 do       k:=k+f[i];   if k&lt;(sum-k) then       writeln(k)   else       writeln(sum-k);end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙之中帮我审核题解，谢谢！</p><p>End.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学术版 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 题解 </tag>
+            
+            <tag> 洛谷 </tag>
+            
+            <tag> Codeforces </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>yorg.io游戏攻略</title>
       <link href="/2020/05/01/yorg-io%E6%94%BB%E7%95%A5/"/>
       <url>/2020/05/01/yorg-io%E6%94%BB%E7%95%A5/</url>

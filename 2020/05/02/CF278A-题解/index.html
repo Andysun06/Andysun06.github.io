@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="yorg.io攻略, Andysun06">
+    <meta name="keywords" content="CF278A-题解, Andysun06">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>yorg.io攻略 | Andysun06</title>
+    <title>CF278A-题解 | Andysun06</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">yorg.io攻略</h1>
+                    <h1 class="description center-align post-title">CF278A-题解</h1>
                 </div>
             </div>
         </div>
@@ -441,12 +441,41 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                <span class="chip bg-color">题解</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                <span class="chip bg-color">洛谷</span>
+                            </a>
+                        
+                            <a href="/tags/Codeforces/">
+                                <span class="chip bg-color">Codeforces</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/" class="post-category">
+                                学术版
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -455,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-02
                 </div>
                 
 
@@ -464,7 +493,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    423
                 </div>
                 
 
@@ -476,7 +505,79 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="CF278A-题解"><a href="#CF278A-题解" class="headerlink" title="CF278A 题解"></a>CF278A 题解</h2><p>这题既然没有pascal题解，那我就来一篇</p>
+<h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>有 $n$ 个车站排成一个<strong>环形</strong>，给定 $n$ 个车站之间的距离，求从第$s$个车站到第 $t$ 个车站所需的最短距离。</p>
+<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>也就是说，有一个这样的车站：</p>
+<p><img src="https://i.loli.net/2020/05/01/i6pjY3a4hyAgNno.png" alt="1"></p>
+<p>他可以这样走：</p>
+<p><img src="https://i.loli.net/2020/05/01/C1y8PTSFVeHWnLE.png" alt="1"></p>
+<p>也可以这样走：</p>
+<p><img src="https://i.loli.net/2020/05/01/bC5XiJ6HIA8Bucs.png" alt="1"></p>
+<p>现在告诉你：</p>
+<ul>
+<li>① 和 ② 的距离为 2</li>
+<li>② 和 ③ 的距离为 3</li>
+<li>③ 和 ④ 的距离为 1</li>
+<li>④ 和 ① 的距离为 8</li>
+</ul>
+<p>也就是下面这种状况：</p>
+<p><img src="https://i.loli.net/2020/05/01/GFHVh5N2ysExeR3.png" alt="1"></p>
+<p>那有的人就想，我只要判断出那个路线距离短就可以了呀，那么请看下面：</p>
+<p>你要从 ① 走到 ④，你会怎么走？</p>
+<ul>
+<li>是从 ① –&gt; ② –&gt; ③ –&gt; ④</li>
+<li>还是 ① –&gt; ④</li>
+</ul>
+<p>很明显，当然是 ① –&gt; ② –&gt; ③ –&gt; ④ 要短一点，所以，路线短不一定距离短，好了，既然理解了题目和易错点，就要开始写程序了</p>
+<h3 id="做法分析："><a href="#做法分析：" class="headerlink" title="做法分析："></a>做法分析：</h3><p>我们先用一个数组，把每个点之间的距离存下来，然后计算总路程</p>
+<pre class=" language-pas"><code class="language-pas">read(n);
+   for i:=1 to n do
+   begin
+       read(f[i]);
+       sum:=sum+f[i];//计算总路程
+   end;</code></pre>
+<p>然后输入 $s$ , $t$ 并且将小的放在前面</p>
+<pre class=" language-pas"><code class="language-pas">if s>t then //如果s大于t，就将他们交换过来
+   begin 
+       q:=s; //交换
+       s:=t;
+       t:=q;
+   end;</code></pre>
+<p>再计算从 $s$ 到 $t$ 的路线距离，这时候可能有人问：不是要计算两条吗？</p>
+<p>计算两条当然是可以的，但是我们之前已经计算了总长度，所以说，总长度 减去 $s$ 到 $t$ 的路线距离 就等于 另一条路线长度。</p>
+<pre class=" language-pas"><code class="language-pas">for i:=s to t-1 do
+    k:=k+f[i];</code></pre>
+<p>最后，只要一个判断输出，就可以了</p>
+<pre class=" language-pas"><code class="language-pas">if k<(sum-k) then
+       writeln(k)
+   else
+       writeln(sum-k);</code></pre>
+<p>下面是完整代码：</p>
+<pre><code>var n,s,t,sum,k,i,q:longint;
+    f:array [1..102] of longint;
+Begin
+   read(n);
+   for i:=1 to n do
+   begin
+       read(f[i]);
+       sum:=sum+f[i];
+   end;
+   read(s,t);
+   if s&gt;t then
+   begin 
+       q:=s;
+       s:=t;
+       t:=q;
+   end;
+   for i:=s to t-1 do
+       k:=k+f[i];
+   if k&lt;(sum-k) then
+       writeln(k)
+   else
+       writeln(sum-k);
+end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙之中帮我审核题解，谢谢！</p>
+<p>End.</p>
+
             </div>
             <hr/>
 
@@ -501,7 +602,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/yorg-io%E6%94%BB%E7%95%A5/index.html">http://yoursite.com/yorg-io%E6%94%BB%E7%95%A5/index.html</a>
+                    <a href="http://yoursite.com/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/">http://yoursite.com/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,7 +639,27 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                    <span class="chip bg-color">题解</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                    <span class="chip bg-color">洛谷</span>
+                                </a>
+                            
+                                <a href="/tags/Codeforces/">
+                                    <span class="chip bg-color">Codeforces</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -731,34 +852,66 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/yorg-io%E6%94%BB%E7%95%A5/index.html">
+                <a href="/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="yorg.io攻略">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="CF278A-题解">
                         
-                        <span class="card-title">yorg.io攻略</span>
+                        <span class="card-title">CF278A-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            CF278A 题解这题既然没有pascal题解，那我就来一篇
+题目描述：有 $n$ 个车站排成一个环形，给定 $n$ 个车站之间的距离，求从第$s$个车站到第 $t$ 个车站所需的最短距离。
+题目分析：也就是说，有一个这样的车站：
+
+他可以
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Andysun06
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/" class="post-category">
+                                    学术版
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                        <span class="chip bg-color">题解</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                        <span class="chip bg-color">洛谷</span>
+                    </a>
+                    
+                    <a href="/tags/Codeforces/">
+                        <span class="chip bg-color">Codeforces</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -766,22 +919,24 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/yorg-io%E6%94%BB%E7%95%A5/index.html">
+                <a href="/2020/05/01/yorg-io%E6%94%BB%E7%95%A5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="yorg.io攻略">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="yorg.io游戏攻略">
                         
-                        <span class="card-title">yorg.io攻略</span>
+                        <span class="card-title">yorg.io游戏攻略</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            游戏介绍：yorg.io是一款塔防游戏，会有很多僵尸从地图边界冲向你的主基地，你就是需要合理的利用防御塔，资源他来做好保卫战，以求生存更长的时间。
+建筑大全：基地：
+ 主基地 ：整个游戏的核心，僵尸的目标。主基地被毁游戏结束。主基地的等级便
                         
                     </div>
                     <div class="publish-info">
@@ -790,13 +945,28 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Andysun06
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%81%8C%E6%B0%B4%E7%89%88/" class="post-category">
+                                    灌水版
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B8%B8%E6%88%8F/">
+                        <span class="chip bg-color">游戏</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%94%BB%E7%95%A5/">
+                        <span class="chip bg-color">攻略</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
