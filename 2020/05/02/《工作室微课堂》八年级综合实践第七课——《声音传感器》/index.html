@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CF278A-题解, Andysun06">
+    <meta name="keywords" content="《工作室微课堂》八年级综合实践第七课——《声音传感器》, Andysun06">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CF278A-题解 | Andysun06</title>
+    <title>《工作室微课堂》八年级综合实践第七课——《声音传感器》 | Andysun06</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CF278A-题解</h1>
+                    <h1 class="description center-align post-title">《工作室微课堂》八年级综合实践第七课——《声音传感器》</h1>
                 </div>
             </div>
         </div>
@@ -443,24 +443,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/%E5%90%8D%E5%B8%88%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
+                                <span class="chip bg-color">名师工作室</span>
                             </a>
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">学习</span>
-                            </a>
-                        
-                            <a href="/tags/%E9%A2%98%E8%A7%A3/">
-                                <span class="chip bg-color">题解</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%B4%9B%E8%B0%B7/">
-                                <span class="chip bg-color">洛谷</span>
-                            </a>
-                        
-                            <a href="/tags/Codeforces/">
-                                <span class="chip bg-color">Codeforces</span>
+                            <a href="/tags/%E5%BE%AE%E8%AF%BE%E5%A0%82/">
+                                <span class="chip bg-color">微课堂</span>
                             </a>
                         
                     </div>
@@ -471,8 +459,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
-                                题解版
+                            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/" class="post-category">
+                                学术版
                             </a>
                         
                     </div>
@@ -493,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    423
+                    20
                 </div>
                 
 
@@ -505,78 +493,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="CF278A-题解"><a href="#CF278A-题解" class="headerlink" title="CF278A 题解"></a>CF278A 题解</h2><p>这题既然没有pascal题解，那我就来一篇</p>
-<h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>有 $n$ 个车站排成一个<strong>环形</strong>，给定 $n$ 个车站之间的距离，求从第$s$个车站到第 $t$ 个车站所需的最短距离。</p>
-<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>也就是说，有一个这样的车站：</p>
-<p><img src="https://i.loli.net/2020/05/01/i6pjY3a4hyAgNno.png" alt="1"></p>
-<p>他可以这样走：</p>
-<p><img src="https://i.loli.net/2020/05/01/C1y8PTSFVeHWnLE.png" alt="1"></p>
-<p>也可以这样走：</p>
-<p><img src="https://i.loli.net/2020/05/01/bC5XiJ6HIA8Bucs.png" alt="1"></p>
-<p>现在告诉你：</p>
-<ul>
-<li>① 和 ② 的距离为 2</li>
-<li>② 和 ③ 的距离为 3</li>
-<li>③ 和 ④ 的距离为 1</li>
-<li>④ 和 ① 的距离为 8</li>
-</ul>
-<p>也就是下面这种状况：</p>
-<p><img src="https://i.loli.net/2020/05/01/GFHVh5N2ysExeR3.png" alt="1"></p>
-<p>那有的人就想，我只要判断出那个路线距离短就可以了呀，那么请看下面：</p>
-<p>你要从 ① 走到 ④，你会怎么走？</p>
-<ul>
-<li>是从 ① –&gt; ② –&gt; ③ –&gt; ④</li>
-<li>还是 ① –&gt; ④</li>
-</ul>
-<p>很明显，当然是 ① –&gt; ② –&gt; ③ –&gt; ④ 要短一点，所以，路线短不一定距离短，好了，既然理解了题目和易错点，就要开始写程序了</p>
-<h3 id="做法分析："><a href="#做法分析：" class="headerlink" title="做法分析："></a>做法分析：</h3><p>我们先用一个数组，把每个点之间的距离存下来，然后计算总路程</p>
-<pre class=" language-pas"><code class="language-pas">read(n);
-   for i:=1 to n do
-   begin
-       read(f[i]);
-       sum:=sum+f[i];//计算总路程
-   end;</code></pre>
-<p>然后输入 $s$ , $t$ 并且将小的放在前面</p>
-<pre class=" language-pas"><code class="language-pas">if s>t then //如果s大于t，就将他们交换过来
-   begin 
-       q:=s; //交换
-       s:=t;
-       t:=q;
-   end;</code></pre>
-<p>再计算从 $s$ 到 $t$ 的路线距离，这时候可能有人问：不是要计算两条吗？</p>
-<p>计算两条当然是可以的，但是我们之前已经计算了总长度，所以说，总长度 减去 $s$ 到 $t$ 的路线距离 就等于 另一条路线长度。</p>
-<pre class=" language-pas"><code class="language-pas">for i:=s to t-1 do
-    k:=k+f[i];</code></pre>
-<p>最后，只要一个判断输出，就可以了</p>
-<pre class=" language-pas"><code class="language-pas">if k<(sum-k) then
-       writeln(k)
-   else
-       writeln(sum-k);</code></pre>
-<p>下面是完整代码：</p>
-<pre><code>var n,s,t,sum,k,i,q:longint;
-    f:array [1..102] of longint;
-Begin
-   read(n);
-   for i:=1 to n do
-   begin
-       read(f[i]);
-       sum:=sum+f[i];
-   end;
-   read(s,t);
-   if s&gt;t then
-   begin 
-       q:=s;
-       s:=t;
-       t:=q;
-   end;
-   for i:=s to t-1 do
-       k:=k+f[i];
-   if k&lt;(sum-k) then
-       writeln(k)
-   else
-       writeln(sum-k);
-end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙之中帮我审核题解，谢谢！</p>
-<p>End.</p>
+                <h1 id="八年级综合实践第七课《声音传感器》"><a href="#八年级综合实践第七课《声音传感器》" class="headerlink" title="八年级综合实践第七课《声音传感器》"></a>八年级综合实践第七课《声音传感器》</h1><p><a href="https://mp.weixin.qq.com/s/Z7PWpbUZLN3LiEupm5mopQ" target="_blank" rel="noopener">课堂传送门</a></p>
 
             </div>
             <hr/>
@@ -602,7 +519,7 @@ end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/">http://yoursite.com/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/</a>
+                    <a href="http://yoursite.com/2020/05/02/%E3%80%8A%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%BE%AE%E8%AF%BE%E5%A0%82%E3%80%8B%E5%85%AB%E5%B9%B4%E7%BA%A7%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E7%AC%AC%E4%B8%83%E8%AF%BE%E2%80%94%E2%80%94%E3%80%8A%E5%A3%B0%E9%9F%B3%E4%BC%A0%E6%84%9F%E5%99%A8%E3%80%8B/">http://yoursite.com/2020/05/02/%E3%80%8A%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%BE%AE%E8%AF%BE%E5%A0%82%E3%80%8B%E5%85%AB%E5%B9%B4%E7%BA%A7%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E7%AC%AC%E4%B8%83%E8%AF%BE%E2%80%94%E2%80%94%E3%80%8A%E5%A3%B0%E9%9F%B3%E4%BC%A0%E6%84%9F%E5%99%A8%E3%80%8B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -640,24 +557,12 @@ end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/%E5%90%8D%E5%B8%88%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
+                                    <span class="chip bg-color">名师工作室</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">学习</span>
-                                </a>
-                            
-                                <a href="/tags/%E9%A2%98%E8%A7%A3/">
-                                    <span class="chip bg-color">题解</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B4%9B%E8%B0%B7/">
-                                    <span class="chip bg-color">洛谷</span>
-                                </a>
-                            
-                                <a href="/tags/Codeforces/">
-                                    <span class="chip bg-color">Codeforces</span>
+                                <a href="/tags/%E5%BE%AE%E8%AF%BE%E5%A0%82/">
+                                    <span class="chip bg-color">微课堂</span>
                                 </a>
                             
                         </div>
@@ -851,20 +756,24 @@ end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/02/%E3%80%8A%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%BE%AE%E8%AF%BE%E5%A0%82%E3%80%8B%E5%85%AB%E5%B9%B4%E7%BA%A7%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E7%AC%AC%E4%B8%83%E8%AF%BE%E2%80%94%E2%80%94%E3%80%8A%E5%A3%B0%E9%9F%B3%E4%BC%A0%E6%84%9F%E5%99%A8%E3%80%8B/">
+                <a href="/2020/05/02/CF110B-%E9%A2%98%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="《工作室微课堂》八年级综合实践第七课——《声音传感器》">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="CF110B-题解">
                         
-                        <span class="card-title">《工作室微课堂》八年级综合实践第七课——《声音传感器》</span>
+                        <span class="card-title">CF110B-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            八年级综合实践第七课《声音传感器》课堂传送门
+                            CF110B 题解这题居然没有 Pascal 的题解，那我就写一篇吧。
+题目翻译&amp;做法分析：给定一个数 $n$ 让你输出满足这三个条件的字符串：
 
+整个字符串都由小写字母组成；
+两个相同字母之间的距离为 4 或 7。
+在满足以上条件
                         
                     </div>
                     <div class="publish-info">
@@ -875,8 +784,8 @@ end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/" class="post-category">
-                                    学术版
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                    题解版
                                 </a>
                             
                             
@@ -886,12 +795,24 @@ end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%90%8D%E5%B8%88%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
-                        <span class="chip bg-color">名师工作室</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E5%BE%AE%E8%AF%BE%E5%A0%82/">
-                        <span class="chip bg-color">微课堂</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                        <span class="chip bg-color">题解</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                        <span class="chip bg-color">洛谷</span>
+                    </a>
+                    
+                    <a href="/tags/Codeforces/">
+                        <span class="chip bg-color">Codeforces</span>
                     </a>
                     
                 </div>
@@ -905,19 +826,23 @@ end.</code></pre><p>希望本题解对大家有帮助，也感谢管理员百忙
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/02/CF485A-%E9%A2%98%E8%A7%A3/">
+                <a href="/2020/05/02/CF278A-%E9%A2%98%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CF485A-题解">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="CF278A-题解">
                         
-                        <span class="card-title">CF485A-题解</span>
+                        <span class="card-title">CF278A-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CF485A 题解题目分析：这个题的题面看得有点复杂（可能只有我这个蒟蒻觉得），但其实只要仔细思考一下，很容易就发现，这题的意思就是输入一个数 $n$，然后再枚举多次，如果在枚举的时候发现了 $a%m==0$ 就直接输出 Yes 并且退出，
+                            CF278A 题解这题既然没有pascal题解，那我就来一篇
+题目描述：有 $n$ 个车站排成一个环形，给定 $n$ 个车站之间的距离，求从第$s$个车站到第 $t$ 个车站所需的最短距离。
+题目分析：也就是说，有一个这样的车站：
+
+他可以
                         
                     </div>
                     <div class="publish-info">
