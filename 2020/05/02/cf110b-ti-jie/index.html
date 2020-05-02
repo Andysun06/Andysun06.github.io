@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="yorg.io游戏攻略, Andysun06">
+    <meta name="keywords" content="CF110B-题解, Andysun06">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>yorg.io游戏攻略 | Andysun06</title>
+    <title>CF110B-题解 | Andysun06</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Andysun06" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -321,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">yorg.io游戏攻略</h1>
+                    <h1 class="description center-align post-title">CF110B-题解</h1>
                 </div>
             </div>
         </div>
@@ -443,12 +444,24 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B8%B8%E6%88%8F/">
-                                <span class="chip bg-color">游戏</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/%E6%94%BB%E7%95%A5/">
-                                <span class="chip bg-color">攻略</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                <span class="chip bg-color">题解</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                <span class="chip bg-color">洛谷</span>
+                            </a>
+                        
+                            <a href="/tags/Codeforces/">
+                                <span class="chip bg-color">Codeforces</span>
                             </a>
                         
                     </div>
@@ -459,8 +472,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%81%8C%E6%B0%B4%E7%89%88/" class="post-category">
-                                灌水版
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                题解版
                             </a>
                         
                     </div>
@@ -472,7 +485,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-02
                 </div>
                 
 
@@ -481,7 +494,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    374
                 </div>
                 
 
@@ -493,76 +506,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="游戏介绍："><a href="#游戏介绍：" class="headerlink" title="游戏介绍："></a>游戏介绍：</h2><p>yorg.io是一款塔防游戏，会有很多僵尸从地图边界冲向你的主基地，你就是需要合理的利用防御塔，资源他来做好保卫战，以求生存更长的时间。</p>
-<h2 id="建筑大全："><a href="#建筑大全：" class="headerlink" title="建筑大全："></a>建筑大全：</h2><h3 id="基地："><a href="#基地：" class="headerlink" title="基地："></a>基地：</h3><ul>
-<li><img src="https://cdn.luogu.com.cn/upload/image_hosting/3qaqp24k.png" alt=""> 主基地 ：整个游戏的核心，僵尸的目标。主基地被毁游戏结束。主基地的等级便是其它建筑的最高等级</li>
-</ul>
-<h3 id="防御类建筑："><a href="#防御类建筑：" class="headerlink" title="防御类建筑："></a>防御类建筑：</h3><ul>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/vdj4c7wi.png" alt=""> 城墙：阻挡僵尸，使僵尸无法前进。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/7307nnl2.png" alt=""> 箭塔：一种向单个僵尸发射高伤害的箭的防御塔。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/l5c8jeou.png" alt=""> 加农炮：发射炮弹，范围伤害，攻击僵尸</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/pka3ohbt.png" alt=""> 闪电塔：用核能发射曲折闪电，闪电可以蔓延攻击其他僵尸。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/pl60inr0.png" alt=""> 护盾塔：将铀转换为护盾，抵挡一次攻击。</p>
-</li>
-</ul>
-<h3 id="资源类建筑："><a href="#资源类建筑：" class="headerlink" title="资源类建筑："></a>资源类建筑：</h3><ul>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/g8wvacv0.png" alt=""> 水晶开采机：水晶是此游戏中的货币，把水晶开采机放在水晶矿四周便可开采水晶并运至主基地（如果离基地较远则需运输机运输）</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/hs665hek.png" alt=""> 生铁开采机：将生铁开采机放在铁矿四周，可开采生铁。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6cb6nc1o.png" alt=""> 炮弹工厂：将2个生铁转换为炮弹，如无生铁不工作。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/zvk3jpig.png" alt=""> 伐木机：将伐木机放在树木周围，可开采木材。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/eglit1i3.png" alt=""> 钢铁工厂：将2木材与1生铁转换成钢铁。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/hkx2za8v.png" alt=""> 锯木机：将木材转化为木棍。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/3spihbov.png" alt=""> 制箭厂：将钢铁与木棍转换为箭。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/xykbsork.png" alt=""> 铀矿开采机：将铀矿开采机放置在铀矿四周，可开采铀。</p>
-</li>
-<li><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/jkgmix4r.png" alt=""> 核反应堆：将铀转换为核能。</p>
-</li>
-</ul>
-<h3 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h3><ul>
-<li><img src="https://cdn.luogu.com.cn/upload/image_hosting/l01a9pli.png" alt=""> 运输机：在各建筑间运输物品</li>
-</ul>
-<h2 id="游戏玩法："><a href="#游戏玩法：" class="headerlink" title="游戏玩法："></a>游戏玩法：</h2><p>游戏开始之前，需要放置主基地，之后游戏自动开始，放置的时候首先得寻找一个好的位置（建议放在水晶矿附近，附近的水晶矿越多越好），地图有限，资源随机，位置可能决定后期能够发展到多大，最好是找一个周围有多种矿产，且位置较近的地方，网上有人说，建在边界上会好些（注意，不是把大本营直接建在边界，而是尽量在边上，不要理解错我）。放置之后，需要利用水晶采矿机开采水晶，然后建造城墙，抵挡外敌，升级基地，能够解锁更多道具。打败boss或者生存一天你就有技能点进行技能学习，可以选择提高伤害，或者增加防御，生产速度等等。生存的天数越长，之后遇到的攻击越强烈，当你布局不好的时候之后就会手忙脚乱的，前面有些无聊，可以选择快进，加快游戏节奏，如果像重新布局，可以暂停游戏进行重新改造。</p>
-<h2 id="游戏技巧："><a href="#游戏技巧：" class="headerlink" title="游戏技巧："></a>游戏技巧：</h2><p>对于新手来说，可能刚刚开始会觉得很困难，但是你掌握了技巧之后，你会发现面对僵尸的攻击应付自如，得心应手，下面，就让我来讲一些使用小技巧吧：</p>
-<h3 id="技巧一：万里长城"><a href="#技巧一：万里长城" class="headerlink" title="技巧一：万里长城"></a>技巧一：万里长城</h3><p>估计对于许多新手来说，僵尸四面八方的冲来，防御甚为艰苦，那么，这个方法对你来说就很有用了，他可以帮你减少一大部分僵尸的攻击。</p>
+                <h2 id="CF110B-题解"><a href="#CF110B-题解" class="headerlink" title="CF110B 题解"></a>CF110B 题解</h2><p>这题居然没有 Pascal 的题解，那我就写一篇吧。</p>
+<h3 id="题目翻译-amp-做法分析："><a href="#题目翻译-amp-做法分析：" class="headerlink" title="题目翻译&amp;做法分析："></a>题目翻译&amp;做法分析：</h3><p>给定一个数 $n$ 让你输出满足这三个条件的字符串：</p>
 <ul>
-<li><p>首先，你的主基地要至少在5级以上，然后在基地已经被围墙包围并且有多余的围墙。</p>
+<li>整个字符串都由小写字母组成；</li>
+<li>两个相同字母之间的距离为 4 或 7。</li>
+<li>在满足以上条件的前提上，字符串尽量最小。</li>
+</ul>
+<p>然后我们就可以开始找规律，首先，字典序是最小的，那不就是 $a$,$b$,$c$,$d$…… 等等，按顺序来。</p>
+<p>接着，我们画出一个表格：</p>
+<p>先把字典序最小的 $a$ 填进去（注意：两个相同字母之间的距离为 4 或 7。） 为了字典序最小，所以肯定是字典序越小的字母越往前。</p>
+<table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">c</th>
+<th align="center">d</th>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">c</th>
+<th align="center">d</th>
+<th align="center">a</th>
+<th align="center">……</th>
+</tr>
+</thead>
+</table>
+<p>照上面这样子填下去，发现有一个循环节 <code>a</code>+<code>bcda</code>+<code>bcda</code>+<code>bcda</code>+…… 那我们就可以开始写程序了。</p>
+<h3 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h3><ul>
+<li><p>Pascal 代码：</p>
+<pre class=" language-pas"><code class="language-pas">var n,i:longint;
+begin
+  read(n); //输入
+  for i:=0 to n-1 do //循环 n 次
+      write(chr(97+i mod 4)); //刚刚找到的规律
+end.</code></pre>
 </li>
-<li><p>然后，把视野移动到地图最边上，沿着边缘建立一排围墙，效果如下图：<br><img src="https://i.loli.net/2020/04/23/dugO32NaGjR9K8U.png" alt="QQ截图20200423170903.png"></p>
-</li>
-<li><p>最后升级围墙，使围墙与主基地等级相差不超过一级，等你慢慢重复以上动作，你会发现，你把将近一半的地图围起来时，会有将近一半的僵尸被挡在地图边缘，无法通过，这时，你就成功了，等你把整个地图围起来是，就可以很轻松了。</p>
+<li><p>C++ 代码：</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
+<span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输入</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//循环 n 次</span>
+      <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token operator">+</span>i<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//刚刚找到的规律</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
-<p>但是要注意，围墙尽量等级要高，而且要在技能树里升级，级别越高当然越好，最好在围墙后建设防御建筑，保证围墙不会被打穿。</p>
-<h2 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h2><ul>
-<li><p>Q1：我明明一直在升级防御建筑，为什么还是在30多天就死了？</p>
-</li>
-<li><p>A1：您的围墙等级是否和大本营等级一样？技能树是否升级？大本营是否在城池中心？</p>
-</li>
-<li><p>Q2：僵尸是从那里出来的？</p>
-</li>
-<li><p>A2：我们把可以放建筑的地方叫做“真实世界”，不可以放建筑的叫做“虚空世界”，僵尸就是从最边上的虚空世界里出来的，所以你无法阻止僵尸的出现</p>
-</li>
-</ul>
-<h2 id="游戏下载网址："><a href="#游戏下载网址：" class="headerlink" title="游戏下载网址："></a>游戏下载网址：</h2><ul>
-<li><a href="https://yorg.io/" target="_blank" rel="noopener">在线玩</a></li>
-<li><a href="https://dl.3dmgame.com/pc/127906.html" target="_blank" rel="noopener">下载网址</a></li>
-</ul>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>个人觉得是在所有防塔游戏里，可以排到前3的防塔游戏了，因为此游戏的特效丰富，不受限制，可以根据自己爱好自由发挥，是一个不错的选择。</p>
-<h2 id="鸣谢："><a href="#鸣谢：" class="headerlink" title="鸣谢："></a>鸣谢：</h2><ul>
-<li>@<a href="https://www.luogu.com.cn/user/203452" target="_blank" rel="noopener">_tommysun_</a> 大佬对此文章的重大贡献</li>
-<li>@<a href="https://www.luogu.com.cn/user/203446" target="_blank" rel="noopener">诸奕丞</a> 对此文章的支持</li>
-</ul>
+<p>提交结果显示，Pascal 的代码会比 C++ 慢 1~2 秒，但内存要更少。</p>
+<p>希望本题解对大家有帮助，也感谢管理员在百忙之中帮助我审核题解，谢谢！</p>
 
             </div>
             <hr/>
@@ -588,7 +580,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Andysun06.github.io/2020/05/01/yorg-io%E6%94%BB%E7%95%A5/">http://Andysun06.github.io/2020/05/01/yorg-io%E6%94%BB%E7%95%A5/</a>
+                    <a href="http://Andysun06.github.io/2020/05/02/cf110b-ti-jie/">http://Andysun06.github.io/2020/05/02/cf110b-ti-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -626,12 +618,24 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B8%B8%E6%88%8F/">
-                                    <span class="chip bg-color">游戏</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
-                                <a href="/tags/%E6%94%BB%E7%95%A5/">
-                                    <span class="chip bg-color">攻略</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                    <span class="chip bg-color">题解</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                    <span class="chip bg-color">洛谷</span>
+                                </a>
+                            
+                                <a href="/tags/Codeforces/">
+                                    <span class="chip bg-color">Codeforces</span>
                                 </a>
                             
                         </div>
@@ -825,19 +829,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/02/CF701B-%E9%A2%98%E8%A7%A3/">
+                <a href="/2020/05/02/cf847g-ti-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="CF278A-题解">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="CF847G-题解">
                         
-                        <span class="card-title">CF278A-题解</span>
+                        <span class="card-title">CF847G-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CF701B 题解题目分析：这道题是给出了一个棋盘，大小为 $n×n$ 并且里面有 $m$ 个棋子，每个棋子可以攻击与他同一行，列的位置，并且 $n$ 和 $m$ 都很大，数据范围为 ( $1 \leq n \leq 100000, 1 \
+                            CF847G 题解题目分析：一共有 $n$ 个小组，每个小组都有 7 个课程，有可能有两个或两个以上的小组同时上课，但是一个教室只可以装下一个小组，问你如果要让所有小组都可以在教室上课，一共需要多少个教室？    
+上面的描述可能理解起来比
                         
                     </div>
                     <div class="publish-info">
@@ -890,34 +895,33 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/Blog-question/">
+                <a href="/2020/05/02/ba-nian-ji-di-qi-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="问题反馈">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="《工作室微课堂》八年级综合实践第七课——《声音传感器》">
                         
-                        <span class="card-title">问题反馈</span>
+                        <span class="card-title">《工作室微课堂》八年级综合实践第七课——《声音传感器》</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            众所周知，本博客从搭建至今时间很短，存在很多的问题，所以特意创建此贴，如果有问题可以在下面反馈。有特殊情况，无法在下面说明的可以按照下面方式联系我：
-QQ：944898918
-邮箱：944898918@qq.com
-洛谷私信：Andysun
+                            八年级综合实践第七课《声音传感器》课堂传送门
+本文章摘自《邓汉盘名师工作室》，版权归《邓汉盘名师工作室》所有，望周知
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AB%99%E5%8A%A1%E7%89%88/" class="post-category">
-                                    站务版
+                            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/" class="post-category">
+                                    学术版
                                 </a>
                             
                             
@@ -927,12 +931,12 @@ QQ：944898918
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8F%8D%E9%A6%88/">
-                        <span class="chip bg-color">反馈</span>
+                    <a href="/tags/%E9%82%93%E6%B1%89%E7%9B%98%E5%90%8D%E5%B8%88%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
+                        <span class="chip bg-color">邓汉盘名师工作室</span>
                     </a>
                     
-                    <a href="/tags/%E7%AB%99%E5%8A%A1/">
-                        <span class="chip bg-color">站务</span>
+                    <a href="/tags/%E5%BE%AE%E8%AF%BE%E5%A0%82/">
+                        <span class="chip bg-color">微课堂</span>
                     </a>
                     
                 </div>

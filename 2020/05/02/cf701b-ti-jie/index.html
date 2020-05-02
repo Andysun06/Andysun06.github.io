@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CF110B-题解, Andysun06">
+    <meta name="keywords" content="CF278A-题解, Andysun06">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CF110B-题解 | Andysun06</title>
+    <title>CF278A-题解 | Andysun06</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Andysun06" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -321,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CF110B-题解</h1>
+                    <h1 class="description center-align post-title">CF278A-题解</h1>
                 </div>
             </div>
         </div>
@@ -493,7 +494,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    374
+                    655
                 </div>
                 
 
@@ -505,55 +506,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="CF110B-题解"><a href="#CF110B-题解" class="headerlink" title="CF110B 题解"></a>CF110B 题解</h2><p>这题居然没有 Pascal 的题解，那我就写一篇吧。</p>
-<h3 id="题目翻译-amp-做法分析："><a href="#题目翻译-amp-做法分析：" class="headerlink" title="题目翻译&amp;做法分析："></a>题目翻译&amp;做法分析：</h3><p>给定一个数 $n$ 让你输出满足这三个条件的字符串：</p>
+                <h2 id="CF701B-题解"><a href="#CF701B-题解" class="headerlink" title="CF701B 题解"></a>CF701B 题解</h2><h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>这道题是给出了一个棋盘，大小为 $n×n$ 并且里面有 $m$ 个棋子，每个棋子可以攻击与他同一行，列的位置，并且 $n$ 和 $m$ 都很大，数据范围为 ( $1 \leq n \leq 100000, 1 \leq m \leq min(100000,n^{2} )$)。我们要输出每放一个棋子后，有多少个地方是攻击不到的。</p>
+<h3 id="题目难度："><a href="#题目难度：" class="headerlink" title="题目难度："></a>题目难度：</h3><p>个人认为在 普及/提高- 左右。</p>
+<h3 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h3><p>当看到这题的第一眼，我就想到了二维数组模拟，但是，在看了数据范围之后，发现行不通，二维数组绝对会爆，于是我就想到了 $stl$ 中的 $set$ 成员函数，下面我们来介绍一下什么是 $set$：</p>
 <ul>
-<li>整个字符串都由小写字母组成；</li>
-<li>两个相同字母之间的距离为 4 或 7。</li>
-<li>在满足以上条件的前提上，字符串尽量最小。</li>
+<li>定义 $set$：</li>
 </ul>
-<p>然后我们就可以开始找规律，首先，字典序是最小的，那不就是 $a$,$b$,$c$,$d$…… 等等，按顺序来。</p>
-<p>接着，我们画出一个表格：</p>
-<p>先把字典序最小的 $a$ 填进去（注意：两个相同字母之间的距离为 4 或 7。） 为了字典序最小，所以肯定是字典序越小的字母越往前。</p>
-<table>
-<thead>
-<tr>
-<th align="center">a</th>
-<th align="center">b</th>
-<th align="center">c</th>
-<th align="center">d</th>
-<th align="center">a</th>
-<th align="center">b</th>
-<th align="center">c</th>
-<th align="center">d</th>
-<th align="center">a</th>
-<th align="center">……</th>
-</tr>
-</thead>
-</table>
-<p>照上面这样子填下去，发现有一个循环节 <code>a</code>+<code>bcda</code>+<code>bcda</code>+<code>bcda</code>+…… 那我们就可以开始写程序了。</p>
-<h3 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h3><ul>
-<li><p>Pascal 代码：</p>
-<pre class=" language-pas"><code class="language-pas">var n,i:longint;
-begin
-  read(n); //输入
-  for i:=0 to n-1 do //循环 n 次
-      write(chr(97+i mod 4)); //刚刚找到的规律
-end.</code></pre>
-</li>
-<li><p>C++ 代码：</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<blockquote>
+<p>格式：$set &lt;value_type&gt; name;$</p>
+<p>其中 $value_type$ 是 $set$ 中所要存储的元素类型，例如 <code>int</code>,<code>string</code>,或自定义的结构体名称。</p>
+<p>定义 $set$ 还要包含 $set$ 头文件，即 <code>#include&lt;set&gt;</code>。</p>
+</blockquote>
+<ul>
+<li>介绍 $set$</li>
+</ul>
+<blockquote>
+<p>$set$ 的内部实现其实是一棵红黑树，<code>int</code>，<code>string</code> 等C++自带变量类型已经帮我们定义好了小于号，也就是他会自动帮我们进行排序，其中 <code>int</code> 在 $set$ 中从小到大排，<code>string</code> 在 $set$ 中按字典序排。</p>
+</blockquote>
+<ul>
+<li>使用 $set$</li>
+</ul>
+<blockquote>
+<p>$set$ 有众多的内置函数，包括 <code>insert(x)</code>,<code>erase(x)</code>,<code>empty()</code>,<code>size()</code>,<code>clear()</code>,<code>find(x)</code> 等等，下面让我们来介绍一下这些内置函数的作用。</p>
+<p>1.<code>insert(x)</code>/<code>erase(x)</code> 是在 $set$ 中 <strong>插入/删除</strong> 一个元素 $x$。</p>
+<p>2.<code>empty()</code>/<code>size()</code> 是判断 $set$ 是否为空/返回 $set$ 的元素个数。</p>
+<p>3.<code>clear()</code> 清空一个 $set$ 的所有元素。</p>
+<p>4.<code>find(x)</code> 查找 $set$ 中是否有 $x$ 这个元素。</p>
+</blockquote>
+<p>了解了 $set$ 函数之后，就可以开始编写我们的程序了。</p>
+<h3 id="完整代码-amp-解析："><a href="#完整代码-amp-解析：" class="headerlink" title="完整代码&amp;解析："></a>完整代码&amp;解析：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
-<span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输入</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//循环 n 次</span>
-      <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token operator">+</span>i<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//刚刚找到的规律</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;set></span> </span><span class="token comment" spellcheck="true">//包含 set 的头文件</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ll long long </span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义 long long 变量</span>
+ll n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>ans<span class="token punctuation">;</span>
+<span class="token keyword">int</span> i<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   set<span class="token operator">&lt;</span>ll<span class="token operator">></span> set1<span class="token punctuation">,</span>set2<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义一个 $set$</span>
+   set1<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把两个 $set$ 函数清空，具体见上面</span>
+   set2<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token operator">&amp;</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输入，注意要用 %lld</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输入，注意要用 %lld</span>
+      set1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//插入一个元素a</span>
+      set2<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//插入一个元素b</span>
+      ll len1<span class="token operator">=</span>set1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>len2<span class="token operator">=</span>set2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把 set1 和 set2 的长度分别赋值给 len1 和 len2</span>
+      ans<span class="token operator">=</span>n<span class="token operator">*</span>n<span class="token operator">-</span>len2<span class="token operator">*</span>n<span class="token operator">-</span>n<span class="token operator">*</span>len1<span class="token operator">+</span>len1<span class="token operator">*</span>len2<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用公式计算答案 ans</span>
+      <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld "</span><span class="token punctuation">,</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出，注意要用 %lld</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-</li>
-</ul>
-<p>提交结果显示，Pascal 的代码会比 C++ 慢 1~2 秒，但内存要更少。</p>
-<p>希望本题解对大家有帮助，也感谢管理员在百忙之中帮助我审核题解，谢谢！</p>
+<p>希望本题解对大家有帮助，也感谢管理员百忙之中抽空为我审核题解，谢谢！</p>
 
             </div>
             <hr/>
@@ -579,7 +581,7 @@ end.</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Andysun06.github.io/2020/05/02/CF110B-%E9%A2%98%E8%A7%A3/">http://Andysun06.github.io/2020/05/02/CF110B-%E9%A2%98%E8%A7%A3/</a>
+                    <a href="http://Andysun06.github.io/2020/05/02/cf701b-ti-jie/">http://Andysun06.github.io/2020/05/02/cf701b-ti-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -828,20 +830,19 @@ end.</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/02/CF847G-%E9%A2%98%E8%A7%A3/">
+                <a href="/2020/05/02/cf485a-ti-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="CF847G-题解">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CF485A-题解">
                         
-                        <span class="card-title">CF847G-题解</span>
+                        <span class="card-title">CF485A-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CF847G 题解题目分析：一共有 $n$ 个小组，每个小组都有 7 个课程，有可能有两个或两个以上的小组同时上课，但是一个教室只可以装下一个小组，问你如果要让所有小组都可以在教室上课，一共需要多少个教室？    
-上面的描述可能理解起来比
+                            CF485A 题解题目分析：这个题的题面看得有点复杂（可能只有我这个蒟蒻觉得），但其实只要仔细思考一下，很容易就发现，这题的意思就是输入一个数 $n$，然后再枚举多次，如果在枚举的时候发现了 $a%m==0$ 就直接输出 Yes 并且退出，
                         
                     </div>
                     <div class="publish-info">
@@ -894,33 +895,33 @@ end.</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/02/%E5%85%AB%E5%B9%B4%E7%BA%A7%E7%AC%AC%E4%B8%83%E8%AF%BE/">
+                <a href="/2020/05/01/yorg-io-gong-lue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="《工作室微课堂》八年级综合实践第七课——《声音传感器》">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="yorg.io游戏攻略">
                         
-                        <span class="card-title">《工作室微课堂》八年级综合实践第七课——《声音传感器》</span>
+                        <span class="card-title">yorg.io游戏攻略</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            八年级综合实践第七课《声音传感器》课堂传送门
-本文章摘自《邓汉盘名师工作室》，版权归《邓汉盘名师工作室》所有，望周知
-
+                            游戏介绍：yorg.io是一款塔防游戏，会有很多僵尸从地图边界冲向你的主基地，你就是需要合理的利用防御塔，资源他来做好保卫战，以求生存更长的时间。
+建筑大全：基地：
+ 主基地 ：整个游戏的核心，僵尸的目标。主基地被毁游戏结束。主基地的等级便
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/" class="post-category">
-                                    学术版
+                            <a href="/categories/%E7%81%8C%E6%B0%B4%E7%89%88/" class="post-category">
+                                    灌水版
                                 </a>
                             
                             
@@ -930,12 +931,12 @@ end.</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%82%93%E6%B1%89%E7%9B%98%E5%90%8D%E5%B8%88%E5%B7%A5%E4%BD%9C%E5%AE%A4/">
-                        <span class="chip bg-color">邓汉盘名师工作室</span>
+                    <a href="/tags/%E6%B8%B8%E6%88%8F/">
+                        <span class="chip bg-color">游戏</span>
                     </a>
                     
-                    <a href="/tags/%E5%BE%AE%E8%AF%BE%E5%A0%82/">
-                        <span class="chip bg-color">微课堂</span>
+                    <a href="/tags/%E6%94%BB%E7%95%A5/">
+                        <span class="chip bg-color">攻略</span>
                     </a>
                     
                 </div>
