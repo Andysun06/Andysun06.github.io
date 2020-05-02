@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="问题反馈, Andysun06">
+    <meta name="keywords" content="CF847G-题解, Andysun06">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>问题反馈 | Andysun06</title>
+    <title>CF847G-题解 | Andysun06</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">问题反馈</h1>
+                    <h1 class="description center-align post-title">CF847G-题解</h1>
                 </div>
             </div>
         </div>
@@ -443,12 +443,24 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8F%8D%E9%A6%88/">
-                                <span class="chip bg-color">反馈</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/%E7%AB%99%E5%8A%A1/">
-                                <span class="chip bg-color">站务</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                <span class="chip bg-color">题解</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                <span class="chip bg-color">洛谷</span>
+                            </a>
+                        
+                            <a href="/tags/Codeforces/">
+                                <span class="chip bg-color">Codeforces</span>
                             </a>
                         
                     </div>
@@ -459,8 +471,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AB%99%E5%8A%A1%E7%89%88/" class="post-category">
-                                站务版
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                题解版
                             </a>
                         
                     </div>
@@ -472,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-29
+                    2020-05-02
                 </div>
                 
 
@@ -481,7 +493,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    85
+                    668
                 </div>
                 
 
@@ -493,12 +505,95 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="众所周知，本博客从搭建至今时间很短，存在很多的问题，所以特意创建此贴，如果有问题可以在下面反馈。"><a href="#众所周知，本博客从搭建至今时间很短，存在很多的问题，所以特意创建此贴，如果有问题可以在下面反馈。" class="headerlink" title="众所周知，本博客从搭建至今时间很短，存在很多的问题，所以特意创建此贴，如果有问题可以在下面反馈。"></a>众所周知，本博客从搭建至今时间很短，存在很多的问题，所以特意创建此贴，如果有问题可以在下面反馈。</h3><h4 id="有特殊情况，无法在下面说明的可以按照下面方式联系我："><a href="#有特殊情况，无法在下面说明的可以按照下面方式联系我：" class="headerlink" title="有特殊情况，无法在下面说明的可以按照下面方式联系我："></a>有特殊情况，无法在下面说明的可以按照下面方式联系我：</h4><ul>
-<li>QQ：944898918</li>
-<li>邮箱：<a href="mailto:944898918@qq.com">944898918@qq.com</a></li>
-<li>洛谷私信：Andysun06          </li>
-</ul>
-<p>感谢您的贡献！</p>
+                <h2 id="CF847G-题解"><a href="#CF847G-题解" class="headerlink" title="CF847G 题解"></a>CF847G 题解</h2><h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>一共有 $n$ 个小组，每个小组都有 7 个课程，有可能有两个或两个以上的小组同时上课，但是一个教室只可以装下一个小组，问你如果要让所有小组都可以在教室上课，一共需要多少个教室？    </p>
+<p>上面的描述可能理解起来比较复杂，下面我来把他简化一下：</p>
+<p>一共有 $n$ 行，每行7个数，让你求那一列的“1”最多，输出他的数量。</p>
+<p>这样就很简单了，如果你还是不理解，可以继续看下面（会的话可以跳过下面这一段）：</p>
+<p>比如样例二：</p>
+<p>一共 $n$ 个小组（用√表示要上课）</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">第1节课</th>
+<th align="center">第2节课</th>
+<th align="center">第3节课</th>
+<th align="center">第4节课</th>
+<th align="center">第5节课</th>
+<th align="center">第6节课</th>
+<th align="center">第7节课</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">小组1</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">小组2</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">小组3</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+<p>我们可以发现，第七节课要上课的小组最多，有三个，所以输出是 <code>3</code>。</p>
+<h3 id="题目难度："><a href="#题目难度：" class="headerlink" title="题目难度："></a>题目难度：</h3><p>个人认为是 <code>入门</code> 难度左右。</p>
+<h3 id="题目做法："><a href="#题目做法：" class="headerlink" title="题目做法："></a>题目做法：</h3><p>我的代码可能比其他大佬写的题解的代码要慢一点，但是跟好理解一点。</p>
+<p>首先，当然是输入一个 $n$ 和 $n$ 行字符数组（我比较喜欢用字符数组，其实字符串也没问题）：</p>
+<pre class=" language-cpp"><code class="language-cpp">   <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//输入 n 行</span>
+      cin<span class="token operator">>></span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//也可以用 scanf，但要注意是‘%s’</span>
+   <span class="token punctuation">}</span></code></pre>
+<p>输入之后，我们要用一个二维数组，来枚举每一列，用<code>max1</code>来记录最大值，代码如下：</p>
+<pre class=" language-cpp"><code class="language-cpp">   <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">7</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//枚举 7 列</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//枚举 n 行</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span>ch<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'1'</span><span class="token punctuation">)</span> sum<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//如果是‘1’就累加</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>sum<span class="token operator">></span>max1<span class="token punctuation">)</span> max1<span class="token operator">=</span>sum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//如果大于了之前的最大值，则把 sum 赋给 max1</span>
+      sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//记住每个循环之后要清 0</span>
+   <span class="token punctuation">}</span></code></pre>
+<p>最后，就是输出了，就一个数，很简单。</p>
+<pre class=" language-cpp"><code class="language-cpp">   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>max1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出</span></code></pre>
+<h3 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>max1<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>sum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//max1 刚开始是要定义为 -1</span>
+<span class="token keyword">char</span> ch<span class="token punctuation">[</span><span class="token number">1001</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//n 的最大值为 1000</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输入 n 行</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      cin<span class="token operator">>></span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//也可以用 scanf，但要注意是‘%s’</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">7</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//枚举 7 列</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//枚举 n 行</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span>ch<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'1'</span><span class="token punctuation">)</span> sum<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//如果是‘1’就累加</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>sum<span class="token operator">></span>max1<span class="token punctuation">)</span> max1<span class="token operator">=</span>sum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//如果大于了之前的最大值，则把 sum 赋给 max1</span>
+      sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//记住每个循环之后要清 0</span>
+   <span class="token punctuation">}</span>
+   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>max1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出</span>
+<span class="token punctuation">}</span></code></pre>
+<p>希望本题解对大家有帮助，也感谢管理员在百忙之中抽空为我审核题解，谢谢！</p>
 
             </div>
             <hr/>
@@ -524,7 +619,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/04/29/Blog-question/">http://yoursite.com/2020/04/29/Blog-question/</a>
+                    <a href="http://yoursite.com/2020/05/02/CF847G-%E9%A2%98%E8%A7%A3/">http://yoursite.com/2020/05/02/CF847G-%E9%A2%98%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -562,12 +657,24 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8F%8D%E9%A6%88/">
-                                    <span class="chip bg-color">反馈</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AB%99%E5%8A%A1/">
-                                    <span class="chip bg-color">站务</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                                    <span class="chip bg-color">题解</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                                    <span class="chip bg-color">洛谷</span>
+                                </a>
+                            
+                                <a href="/tags/Codeforces/">
+                                    <span class="chip bg-color">Codeforces</span>
                                 </a>
                             
                         </div>
@@ -757,52 +864,65 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/05/01/yorg-io%E6%94%BB%E7%95%A5/">
+                <a href="/2020/05/02/CF847G-%E9%A2%98%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="yorg.io游戏攻略">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="CF847G-题解">
                         
-                        <span class="card-title">yorg.io游戏攻略</span>
+                        <span class="card-title">CF847G-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            游戏介绍：yorg.io是一款塔防游戏，会有很多僵尸从地图边界冲向你的主基地，你就是需要合理的利用防御塔，资源他来做好保卫战，以求生存更长的时间。
-建筑大全：基地：
- 主基地 ：整个游戏的核心，僵尸的目标。主基地被毁游戏结束。主基地的等级便
+                            CF847G 题解题目分析：一共有 $n$ 个小组，每个小组都有 7 个课程，有可能有两个或两个以上的小组同时上课，但是一个教室只可以装下一个小组，问你如果要让所有小组都可以在教室上课，一共需要多少个教室？    
+上面的描述可能理解起来比
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%81%8C%E6%B0%B4%E7%89%88/" class="post-category">
-                                    灌水版
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                    题解版
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B8%B8%E6%88%8F/">
-                        <span class="chip bg-color">游戏</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E6%94%BB%E7%95%A5/">
-                        <span class="chip bg-color">攻略</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                        <span class="chip bg-color">题解</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                        <span class="chip bg-color">洛谷</span>
+                    </a>
+                    
+                    <a href="/tags/Codeforces/">
+                        <span class="chip bg-color">Codeforces</span>
                     </a>
                     
                 </div>
@@ -816,48 +936,36 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/C-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/">
+                <a href="/2020/05/02/CF110B-%E9%A2%98%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="C++语言简介">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="CF110B-题解">
                         
-                        <span class="card-title">C++语言简介</span>
+                        <span class="card-title">CF110B-题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目录：
-什么是信息学奥林匹克竞赛
+                            CF110B 题解这题居然没有 Pascal 的题解，那我就写一篇吧。
+题目翻译&amp;做法分析：给定一个数 $n$ 让你输出满足这三个条件的字符串：
 
-什么是C++语言
-
-C++语言特点
-
-C++语言标准
-
-C++语言工作原理
-
-安装DEV C++
-
-推荐书籍
-
-
-内容：1. 信息学奥林匹克竞赛
-信息学奥林匹克竞赛是一项益智性的竞赛活动，核心是考查选手的
+整个字符串都由小写字母组成；
+两个相同字母之间的距离为 4 或 7。
+在满足以上条件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/" class="post-category">
-                                    学术版
+                            <a href="/categories/%E9%A2%98%E8%A7%A3%E7%89%88/" class="post-category">
+                                    题解版
                                 </a>
                             
                             
@@ -873,6 +981,18 @@ C++语言工作原理
                     
                     <a href="/tags/%E5%AD%A6%E4%B9%A0/">
                         <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A2%98%E8%A7%A3/">
+                        <span class="chip bg-color">题解</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B4%9B%E8%B0%B7/">
+                        <span class="chip bg-color">洛谷</span>
+                    </a>
+                    
+                    <a href="/tags/Codeforces/">
+                        <span class="chip bg-color">Codeforces</span>
                     </a>
                     
                 </div>
