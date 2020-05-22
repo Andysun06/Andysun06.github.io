@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://andysun06.github.io/"/>
-  <updated>2020-05-22T07:22:23.439Z</updated>
+  <updated>2020-05-02T08:16:46.522Z</updated>
   <id>http://andysun06.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>����ת��</title>
-    <link href="http://andysun06.github.io/2020/05/22/jin-zhi-zhuan-huan/"/>
-    <id>http://andysun06.github.io/2020/05/22/jin-zhi-zhuan-huan/</id>
-    <published>2020-05-22T07:21:00.000Z</published>
-    <updated>2020-05-22T07:22:23.439Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="ѧ����" scheme="http://Andysun06.github.io/categories/%D1%A7%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/"/>
-    
-    
-      <category term="ѧϰ" scheme="http://Andysun06.github.io/tags/%D1%A7%CF%B0/"/>
-    
-      <category term="��ѧ" scheme="http://Andysun06.github.io/tags/%EF%BF%BD%EF%BF%BD%D1%A7/"/>
-    
-  </entry>
   
   <entry>
     <title>CF847G-题解</title>
