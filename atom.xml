@@ -117,11 +117,11 @@
   </entry>
   
   <entry>
-    <title>CF485A-题解</title>
-    <link href="http://andysun06.github.io/2020/05/02/cf485a-ti-jie/"/>
-    <id>http://andysun06.github.io/2020/05/02/cf485a-ti-jie/</id>
+    <title>CF278A-题解</title>
+    <link href="http://andysun06.github.io/2020/05/02/cf278a-ti-jie/"/>
+    <id>http://andysun06.github.io/2020/05/02/cf278a-ti-jie/</id>
     <published>2020-05-02T07:40:00.000Z</published>
-    <updated>2020-05-02T08:18:58.686Z</updated>
+    <updated>2020-05-02T08:42:10.507Z</updated>
     
     <summary type="html">
     
@@ -129,7 +129,8 @@
       
         
         
-          &lt;h2 id=&quot;CF485A-题解&quot;&gt;&lt;a href=&quot;#CF485A-题解&quot; class=&quot;headerlink&quot; title=&quot;CF485A 题解&quot;&gt;&lt;/a&gt;CF485A 题解&lt;/h2&gt;&lt;h3 id=&quot;题目分析：&quot;&gt;&lt;a href=&quot;#题目分析：&quot;
+          &lt;h2 id=&quot;CF278A-题解&quot;&gt;&lt;a href=&quot;#CF278A-题解&quot; class=&quot;headerlink&quot; title=&quot;CF278A 题解&quot;&gt;&lt;/a&gt;CF278A 题解&lt;/h2&gt;&lt;p&gt;这题既然没有pascal题解，那我就来一篇&lt;/p&gt;
+&lt;h3
         
       
     
@@ -152,11 +153,11 @@
   </entry>
   
   <entry>
-    <title>CF278A-题解</title>
-    <link href="http://andysun06.github.io/2020/05/02/cf278a-ti-jie/"/>
-    <id>http://andysun06.github.io/2020/05/02/cf278a-ti-jie/</id>
+    <title>CF485A-题解</title>
+    <link href="http://andysun06.github.io/2020/05/02/cf485a-ti-jie/"/>
+    <id>http://andysun06.github.io/2020/05/02/cf485a-ti-jie/</id>
     <published>2020-05-02T07:40:00.000Z</published>
-    <updated>2020-05-02T08:42:10.507Z</updated>
+    <updated>2020-05-02T08:18:58.686Z</updated>
     
     <summary type="html">
     
@@ -164,8 +165,7 @@
       
         
         
-          &lt;h2 id=&quot;CF278A-题解&quot;&gt;&lt;a href=&quot;#CF278A-题解&quot; class=&quot;headerlink&quot; title=&quot;CF278A 题解&quot;&gt;&lt;/a&gt;CF278A 题解&lt;/h2&gt;&lt;p&gt;这题既然没有pascal题解，那我就来一篇&lt;/p&gt;
-&lt;h3
+          &lt;h2 id=&quot;CF485A-题解&quot;&gt;&lt;a href=&quot;#CF485A-题解&quot; class=&quot;headerlink&quot; title=&quot;CF485A 题解&quot;&gt;&lt;/a&gt;CF485A 题解&lt;/h2&gt;&lt;h3 id=&quot;题目分析：&quot;&gt;&lt;a href=&quot;#题目分析：&quot;
         
       
     
