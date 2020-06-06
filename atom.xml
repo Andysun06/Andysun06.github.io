@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://andysun06.github.io/"/>
-  <updated>2020-05-02T08:16:46.522Z</updated>
+  <updated>2020-06-06T12:57:53.903Z</updated>
   <id>http://andysun06.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>testlib.h库用法教程</title>
+    <link href="http://andysun06.github.io/2020/06/06/testlib.h-ku-yong-fa-zhi-dao/"/>
+    <id>http://andysun06.github.io/2020/06/06/testlib.h-ku-yong-fa-zhi-dao/</id>
+    <published>2020-06-06T12:40:12.000Z</published>
+    <updated>2020-06-06T12:57:53.903Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;关于testlib.h库，详见&lt;a href=&quot;https://oi-wiki.org/intro/testlib/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学术版" scheme="http://Andysun06.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%89%88/"/>
+    
+    
+      <category term="学习" scheme="http://Andysun06.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="C++头文件" scheme="http://Andysun06.github.io/tags/C-%E5%A4%B4%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>CF847G-题解</title>
@@ -56,7 +85,7 @@
     <link href="http://andysun06.github.io/2020/05/02/cf110b-ti-jie/"/>
     <id>http://andysun06.github.io/2020/05/02/cf110b-ti-jie/</id>
     <published>2020-05-02T08:11:03.000Z</published>
-    <updated>2020-05-23T07:29:05.638Z</updated>
+    <updated>2020-06-05T11:22:33.886Z</updated>
     
     <summary type="html">
     
