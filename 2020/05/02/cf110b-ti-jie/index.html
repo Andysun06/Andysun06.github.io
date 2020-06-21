@@ -506,14 +506,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-05
+                    2020-06-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    297
+                    374
                 </div>
                 
 
@@ -545,50 +545,41 @@
 <p>然后我们就可以开始找规律，首先，字典序是最小的，那不就是 $a$,$b$,$c$,$d$…… 等等，按顺序来。</p>
 <p>接着，我们画出一个表格：</p>
 <p>先把字典序最小的 $a$ 填进去（注意：两个相同字母之间的距离为 4 或 7。） 为了字典序最小，所以肯定是字典序越小的字母越往前。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">a</th>
-<th style="text-align:center">b</th>
-<th style="text-align:center">c</th>
-<th style="text-align:center">d</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">b</th>
-<th style="text-align:center">c</th>
-<th style="text-align:center">d</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">……</th>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">c</th>
+<th align="center">d</th>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">c</th>
+<th align="center">d</th>
+<th align="center">a</th>
+<th align="center">……</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
 </table>
-</div>
 <p>照上面这样子填下去，发现有一个循环节 <code>a</code>+<code>bcda</code>+<code>bcda</code>+<code>bcda</code>+…… 那我们就可以开始写程序了。</p>
 <h3 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h3><ul>
 <li><p>Pascal 代码：</p>
-<pre class=" language-lang-pas"><code class="language-lang-pas">var n,i:longint;
+<pre class=" language-pas"><code class="language-pas">var n,i:longint;
 begin
   read(n); //输入
   for i:=0 to n-1 do //循环 n 次
       write(chr(97+i mod 4)); //刚刚找到的规律
-end.
-</code></pre>
+end.</code></pre>
 </li>
 <li><p>C++ 代码：</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include<iostream>
-#include<cstdio>
-int i,j,n,m;
-int main(){
-  scanf("%d",&n); //输入
-  for(i=0;i<n;i++) //循环 n 次
-      putchar(97+i%4); //刚刚找到的规律
-}
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
+<span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输入</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//循环 n 次</span>
+      <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token operator">+</span>i<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//刚刚找到的规律</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
 <p>提交结果显示，Pascal 的代码会比 C++ 慢 1~2 秒，但内存要更少。</p>
@@ -1164,7 +1155,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.3k</span>&nbsp;字
+                class="white-color">25.4k</span>&nbsp;字
             
             
             
